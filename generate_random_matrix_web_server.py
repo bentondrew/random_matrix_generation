@@ -19,18 +19,18 @@ def index():
   if request.method == 'POST':
     try:
       try:
-        int(request.form('matrix_rows'))
-        int(request.form('matrix_columns'))
+        int(request.form['matrix_rows'])
+        int(request.form['matrix_columns'])
       except Exception as e:
         raise e
       try:
-        float(request.form('max_random_value'))
+        float(request.form['max_random_value'])
       except Exception as e:
         raise e
       flash('Matrix parameters: Rows = {}, Columns = {}, Max random value = {}'
-            .format(request.form('matrix_rows'),
-                    request.form('matrix_columns'),
-                    request.form('max_random_value')))
+            .format(request.form['matrix_rows'],
+                    request.form['matrix_columns'],
+                    request.form['max_random_value']))
       return render_template('index.html')
     except Exception as e:
       flash(e)
