@@ -7,6 +7,17 @@ ALL RIGHTS RESERVED
 {% extends "main.html" %}
 {% block content %}
   <div class="instruction_banner">
-    <h1>Fill in with run instructions and display matrix/matrices generated.</h1>
+    <h1>Enter parameters for matrix to be generated.</h1>
+  </div>
+  <div class="matrix_generation_form">
+    <form action="" method="post">
+      Number of rows for matrix:
+      <input type="text" name="matrix_rows"><br>
+      Number of columns for matrix:
+      <input type="text" name="matrix_columns"><br>
+      Maximum value for random numbers:
+      <input type="text" name="max_random_value"><br>
+      <input type="submit" name="Submit">
+    </form>
   </div>
 {% endblock %}
