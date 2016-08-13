@@ -37,13 +37,12 @@ def index():
       matrix = create_random_matrix(int(request.form['matrix_rows']),
                                     int(request.form['matrix_columns']),
                                     float(request.form['max_random_value']))
-      matrix_message = ''
+      flash('Matrix generated:')
       for row in matrix:
         row_string = ''
         for column in row:
-          row_string = row_string + str(column)
-        matrix_message = matrix_message + row_string + '\n'
-      flash(matrix_message)
+          row_string = row_string + str(column) + ' '
+        flash(row_string)
       return render_template('index.html')
     except Exception as e:
       flash(e)
