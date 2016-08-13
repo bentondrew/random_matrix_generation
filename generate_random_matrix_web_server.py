@@ -37,6 +37,7 @@ def index():
       matrix = create_random_matrix(int(request.form['matrix_rows']),
                                     int(request.form['matrix_columns']),
                                     float(request.form['max_random_value']))
+      flash('')
       flash('Matrix generated:')
       for row in matrix:
         row_string = ''
