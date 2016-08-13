@@ -7,7 +7,7 @@ ALL RIGHTS RESERVED
 {% extends "main.html" %}
 {% block content %}
   <div class="instruction_banner">
-    <h1>Enter parameters for matrix to be generated.</h1>
+    <h1>Enter parameters for matrix/matrices to be generated.</h1>
   </div>
   <div class="matrix_generation_form">
     <form action="" method="post">
@@ -17,6 +17,8 @@ ALL RIGHTS RESERVED
       <input type="text" name="matrix_columns"><br>
       Maximum value for random numbers:
       <input type="text" name="max_random_value"><br>
+      Number of matrices to create:
+      <input type="text" name="number_matrices"><br>
       <input type="submit" name="Submit">
     </form>
   </div>
