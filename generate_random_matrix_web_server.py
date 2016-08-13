@@ -34,7 +34,24 @@ def index():
             .format(request.form['matrix_rows'],
                     request.form['matrix_columns'],
                     request.form['max_random_value']))
+      matrix = create_random_matrix(int(request.form['matrix_rows']),
+                                    int(request.form['matrix_columns']),
+                                    float(request.form['max_random_value']))
+      matrix_message = ''
+      for row in matrix:
+        row_string = ''
+        for column in row:
+          row_string = row_string + str(column)
+        matrix_message = matrix_message + row_string + '\n'
+      flash(matrix_message)
       return render_template('index.html')
     except Exception as e:
       flash(e)
       return render_template('index.html')
+
+
+def create_random_matrix(rows, columns, max_random_value):
+  import random
+  return [[(random.random() * max_random_value)
+           for column in range(columns)]
+          for row in range(rows)]
