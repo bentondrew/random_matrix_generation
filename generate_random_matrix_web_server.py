@@ -22,7 +22,8 @@ def index():
         int(request.form['matrix_rows'])
         int(request.form['matrix_columns'])
       except Exception as e:
-        raise e
+        raise RuntimeError('Please provide an integer '
+                           'for the rows and columns values.')
       try:
         float(request.form['max_random_value'])
       except Exception as e:
